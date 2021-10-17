@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="../public/team_color.css" rel="stylesheet">
+    <title>FO4 팀컬러 탐색기</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>피파 팀컬러 가이드</h1>
+    </div>
+    <form class="form" action="./result" name="selection" method="post">
+        <div class="container">            
+            <div id="ability">
+                <h2>능력치 종류 <span class="guide">(최대 3개 선택가능)</span></h2>
+                <ul>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="속력"></input>속력</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="가속력"></input>가속력</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="민첩성"></input>민첩성</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="밸런스"></input>밸런스</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="반응 속도"></input>반응 속도</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="몸싸움"></input>몸싸움</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="스태미너"></input>스태미너</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="골 결정력"></input>골 결정력</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="중거리 슛"></input>중거리 슛</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="슛 파워"></input>슛 파워</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="헤더"></input>헤더</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="짧은 패스"></input>짧은 패스</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="긴 패스"></input>긴 패스</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="시야"></input>시야</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="크로스"></input>크로스</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="커브"></input>커브</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="드리블"></input>드리블</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="볼 컨트롤"></input>볼 컨트롤</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="가로채기"></input>가로채기</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="대인 수비"></input>대인 수비</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="태클"></input>태클</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="슬라이딩 태클"></input>슬라이딩 태클</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="점프"></input>점프</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="위치 선정"></input>위치 선정</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="침착성"></input>침착성</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="적극성"></input>적극성</label>
+                    <label><input type="checkbox" name="ability" onClick="count_ck(this);" value="프리킥"></input>프리킥</label>
+                </ul>
+            </div>
+            <button type="submit" id="search">검색</button>
+        </div>
+    </form>
+
+    <script>
+    function count_ck(obj){
+        var chkbox = document.getElementsByName("ability");
+        var chkCnt = 0;
+        for(var i=0;i<chkbox.length; i++){
+            if(chkbox[i].checked){
+                chkCnt++;
+            }
+        }
+        if(chkCnt>3){
+            alert("능력치는 3개까지 선택할 수 있습니다.");
+            obj.checked = false;
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>
